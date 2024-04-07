@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package stringService;
+
+option go_package = "./stringService"; // 指定生成的 Go 代码的包路径
+
+// 定义 StringService 服务
+service StringService {
+  // 定义一个 RPC 方法 ToUpper，接收 StringMessage 请求，返回 StringMessage 响应
+  rpc ToUpper(StringMessage) returns (StringMessage) {}
+}
+
+// 定义 StringMessage 消息
+message StringMessage {
+  string value = 1;
+}
